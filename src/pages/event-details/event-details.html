@@ -1,0 +1,59 @@
+
+<ion-header>
+    <ion-navbar></ion-navbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+<div class="event-image" [style.backgroundImage]="'url(' + eventDetails.image + ')'"></div>
+<div class="event-details">
+  <h1>{{eventDetails.title}}</h1>
+  <p>Public event - Hosted by TSH Amesterdam City</p>
+  <div class="event-info">
+    <p><ion-icon name="time"></ion-icon> {{eventDetails.dateTime | dateTimeFromNow}}</p>
+    <p><ion-icon name="pin"></ion-icon> The pool - The Student Hotel Amesterdam City</p>
+    <p><ion-icon name="speedometer"></ion-icon> {{eventDetails.members.length}} going </p>
+  </div>
+  <div class="members">
+    <div class="member" *ngFor="let member of eventDetails.members | slice:0:8; let i = index;">
+        <div class="member-photo" *ngIf="i<7" [style.backgroundImage]="'url(' + member.photo + ')'">
+            
+          </div>
+          <div class="more-members" *ngIf="i>6">+{{eventDetails.members.length - i}}</div>
+
+    </div>
+  </div>
+  <div class="description">
+      <p>{{ (eventDescription.length>charLimit)? (eventDescription | slice:0:charLimit)+'...':(eventDescription) }}</p>
+      <button [ngClass]="isMore ? 'isLess' : 'isMore'" ion-button (click)="showMore()">{{showMoreBtn}} <ion-icon name="{{toggleDescriptionIcon}}"></ion-icon></button>
+    </div>
+
+</div>
+<div class="messageInput">
+    <ion-textarea placeholder="Leave message..."></ion-textarea>
+  </div>
+
+  <div class="message">
+    <div class="message-header">
+      <div class="message-author"></div>
+      <div class="message-title">
+          <p><strong>Lucien van Geffen</strong> shared a link</p>
+          <p><ion-icon name="time"></ion-icon> 14 min ago</p>
+      </div>
+    </div>
+    <div class="message-body">
+      <p>How to ride like a real Dutchie!</p>
+      <div class="message-photo"></div>
+      <h1>The bike instructor guide to cycling</h1>
+      <p>Thankfully, Maxim Hartman aka The Bike Instructor is...</p>
+      <span>youtube.com</span>
+    </div>
+    <div class="message-reactions">
+      <p><ion-icon name="heart"></ion-icon> <span>14</span></p>
+    </div>
+    <div class="message-actions">
+        <button ion-button><ion-icon name="star"></ion-icon> High Five</button>
+        <button ion-button><ion-icon name="text"></ion-icon> Comment</button>
+    </div>
+  </div>
+</ion-content>

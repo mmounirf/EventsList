@@ -1,0 +1,189 @@
+page-event-details {
+    ion-header{
+        ion-navbar{
+            .toolbar-background{
+                background-color: transparent!important;
+                border: none!important;
+            }
+            button{
+                color: #FFF!important;
+                .button-inner{
+                    span{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    ion-content{
+        background-color: $gray!important;
+        .fixed-content{
+            margin-top: 0!important;
+        }
+        .scroll-content{
+            padding-top: 0!important;
+        }
+        .event-image{
+            height: 150px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .event-details{
+            padding: 0 20px;
+            background-color: #FFF;
+            padding-bottom: 10px;
+            h1{
+                text-transform: uppercase;
+                font-size: 3em;
+                margin: 0;
+                white-space: pre;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            p{
+                margin: 0;
+                color: gray;
+            }
+
+            .event-info{
+                margin: 20px 0;
+                p{
+                    padding: 10px 0;
+                    color: #000;
+                }
+            }
+            .members{
+                height: 60px;
+                display: flex;
+                .member{
+                    width: 45px;
+                    height: 45px;
+
+                    .member-photo{
+                        width: 60px;
+                        height: 60px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        border-radius: 50%;
+                        border: 3px solid #FFF;
+                    }
+
+                    .more-members{
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        background-color: $yellow;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 1.5em;
+                        font-weight: 900;
+                        border: 3px solid #FFF;
+                    }
+                }
+            }
+
+            .description{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin: 20px 0;
+                p{
+                    text-align: justify;
+                }
+                button{
+                    background-color: transparent;
+                }
+
+                button.isMore{
+                    margin-top: -25px;
+                }
+                button.isLess{
+
+                }
+            }
+
+        }
+        .messageInput{
+            background-color: #FFF;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+
+        .message{
+            background-color: #FFF;
+            padding: 20px;
+            margin-top: 10px;
+            .message-header{
+                display: flex;
+                .message-author{
+                    width: 40px;
+                    height: 40px;
+                    background: url('../../assets/imgs/avatar1.png');
+                    background-position: center center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+                .message-title{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 10px;
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+            .message-body{
+                h1{
+                    text-transform: uppercase;
+                    margin: 0;
+                    white-space: pre;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                p{
+                    font-family: Roboto;
+                    margin: 0;
+                }
+                span{
+                    font-family: Roboto;
+                    margin: 0;
+                    color: gray;
+                }
+                .message-photo{
+                    background: url('../../assets/imgs/bike.jpeg');
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    height: 200px;
+                }
+            }
+
+            .message-reactions{
+                span{
+                    color: gray;
+                }
+                ion-icon{
+                    color: $green;
+                }
+            }
+            .message-actions{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                button{
+                    background-color: transparent;
+                    color: gray;
+                    ion-icon{
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

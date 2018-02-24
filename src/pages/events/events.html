@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Events
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Search event" animated [(ngModel)]="searchQuery"></ion-searchbar>
+  <event-card *ngFor="let event of events | search: searchQuery" (eventUpdate)="onEventUpdate($event)" [eventData]="event" (click)="goToEvent(event, $event)" [ngClass]="selectedEventId === event.id ? 'selectedEvent' : ''"></event-card>
+</ion-content>
