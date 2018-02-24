@@ -1,108 +1,96 @@
 event-card {
-    .event-card-wrapper{
-        display: flex;
-        justify-content: space-between;
+  .event-card-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .image-container {
+      width: 100px;
+      height: 100px;
+      .image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100%;
         width: 100%;
-        .image-container{
-            width: 100px;
-            height: 100px;
-
-            .image{
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center center;
-                height: 100%;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                color: #FFF;
-
-                .day{
-                    font-size: 2.5em;
-                    line-height: 1em;
-                }
-
-                .month{
-                    font-size: 1.5em;
-                }
-            }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #FFF;
+        .day {
+          font-size: 2.5em;
+          line-height: 1em;
         }
-
-        .details-container{
-            width: calc(100% - 115px);
-            height: 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            .title{
-                font-size: 16px;
-                margin: 0;
-                max-width: 100%;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                text-transform: uppercase;
-            }
-            .time{
-                margin: 0;
-                max-width: 100%;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                font-size: 12px;
-            }
-
-            .members-container{
-                display: flex;
-                .member{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    .member-photo{
-                        background-size: cover;
-                        background-position: center center;
-                        background-repeat: no-repeat;
-                        width: 30px;
-                        height: 30px;
-                        border-radius: 50%;
-                        border: 3px solid #FFF;
-                    }
-                    .more-members{
-                        padding: 0 15px;
-                    }
-                }
-
-
-                .member:not(:first-child){
-                    margin-left: -10px;
-                }
-            }
-
-            .event-status{
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-end;
-
-                button{
-                    margin-right: 10px;
-                }
-
-                button.active{
-                    background-color: $yellow;
-                }
-
-                .active ion-icon{
-                    font-size: 2em;
-                    width: 20px;
-                    height: 15px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
+        .month {
+          font-size: 1.5em;
         }
+      }
     }
+    .details-container {
+      width: calc(100% - 115px);
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .title {
+        font-size: 16px;
+        margin: 0;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+      }
+      .time {
+        margin: 0;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 12px;
+      }
+      .members-container {
+        display: flex;
+        .member {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .member-photo {
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 3px solid #FFF;
+          }
+          .more-members {
+            padding: 0 15px;
+          }
+        }
+        .member:not(:first-child) {
+          margin-left: -10px;
+        }
+      }
+      .event-status {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        button {
+          margin-right: 10px;
+        }
+        button.active {
+          background-color: $yellow;
+        }
+        .active ion-icon {
+          font-size: 2em;
+          width: 20px;
+          height: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
 }

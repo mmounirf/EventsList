@@ -1,8 +1,8 @@
 <div class="event-card-wrapper">
   <div class="image-container">
     <div class="image" [style.backgroundImage]="'url(' + eventData.image + ')'">
-        <span class="day">{{eventData.dateTime | dateTimeFormat:'DD'}}</span>
-        <span class="month">{{eventData.dateTime | dateTimeFormat:'MMM'}}.</span>
+      <span class="day">{{eventData.dateTime | dateTimeFormat:'DD'}}</span>
+      <span class="month">{{eventData.dateTime | dateTimeFormat:'MMM'}}.</span>
     </div>
   </div>
   <div class="details-container">
@@ -11,16 +11,15 @@
     <div class="members-container">
       <div class="member" *ngFor="let member of eventData.members | slice:0:4; let i = index;">
         <div class="member-photo" *ngIf="i<3" [style.backgroundImage]="'url(' + member.photo + ')'">
-            
         </div>
         <div class="more-members" *ngIf="i>2">+{{eventData.members.length - i}} others</div>
       </div>
     </div>
     <div class="event-status">
-        <button ion-button (click)="setEventStatus('going', eventData)" *ngIf="eventData.status != 'ignore'" class="going" [ngClass]="eventData.status == 'going' ? 'active' : ''">
-          <ion-icon name="checkmark" *ngIf="eventData.status == 'going'"></ion-icon>Going</button>
-        <button ion-button (click)="setEventStatus('ignore', eventData)" *ngIf="eventData.status != 'going'" class="ignore" [ngClass]="eventData.status == 'ignore' ? 'active' : ''">
-          <ion-icon name="checkmark" *ngIf="eventData.status == 'ignore'"></ion-icon> Ignore</button>
+      <button ion-button (click)="setEventStatus('going', eventData)" *ngIf="eventData.status != 'ignore'" class="going" [ngClass]="eventData.status == 'going' ? 'active' : ''">
+        <ion-icon name="checkmark" *ngIf="eventData.status == 'going'"></ion-icon>Going</button>
+      <button ion-button (click)="setEventStatus('ignore', eventData)" *ngIf="eventData.status != 'going'" class="ignore" [ngClass]="eventData.status == 'ignore' ? 'active' : ''">
+        <ion-icon name="checkmark" *ngIf="eventData.status == 'ignore'"></ion-icon> Ignore</button>
     </div>
   </div>
 </div>

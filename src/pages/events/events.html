@@ -8,5 +8,22 @@
 
 <ion-content>
   <ion-searchbar placeholder="Search event" animated [(ngModel)]="searchQuery"></ion-searchbar>
-  <event-card *ngFor="let event of events | search: searchQuery" (eventUpdate)="onEventUpdate($event)" [eventData]="event" (click)="goToEvent(event, $event)" [ngClass]="selectedEventId === event.id ? 'selectedEvent' : ''"></event-card>
+  <div class="currentDayEvents" *ngIf="(currentDayEvents | search: searchQuery).length>0">
+    <event-card *ngFor="let event of currentDayEvents | search: searchQuery" (eventUpdate)="onEventUpdate($event)" [eventData]="event"
+      (click)="goToEvent(event, $event)" [ngClass]="selectedEventId === event.id ? 'selectedEvent' : ''"></event-card>
+  </div>
+  <div class="currentWeekEvents" *ngIf="(currentWeekEvents | search: searchQuery).length>0">
+    <event-card *ngFor="let event of currentWeekEvents | search: searchQuery" (eventUpdate)="onEventUpdate($event)" [eventData]="event"
+      (click)="goToEvent(event, $event)" [ngClass]="selectedEventId === event.id ? 'selectedEvent' : ''"></event-card>
+  </div>
+  <div class="otherEvents" *ngIf="(otherEvents | search: searchQuery).length>0">
+    <event-card *ngFor="let event of otherEvents | search: searchQuery" (eventUpdate)="onEventUpdate($event)" [eventData]="event"
+      (click)="goToEvent(event, $event)" [ngClass]="selectedEventId === event.id ? 'selectedEvent' : ''"></event-card>
+  </div>
+
+  <div class="noSearchResults" *ngIf="(currentDayEvents | search: searchQuery).length==0 && (currentWeekEvents | search: searchQuery).length==0 && (otherEvents | search: searchQuery).length==0">
+    <h1><ion-icon name="sad"></ion-icon></h1>
+    <h3>No events results matching your search query</h3>
+    <h4>"{{searchQuery}}"</h4> 
+  </div>
 </ion-content>

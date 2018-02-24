@@ -1,13 +1,66 @@
 page-events {
-    ion-content{
-        background-color: $gray!important;
-
-        event-card{
-            display: flex;
-            padding: 10px 20px;
-        }
-        event-card.selectedEvent{
-            background-color: rgba(255, 208, 4, 0.3);
-        }
+  .toolbar-background {
+    background-color: #FFF;
+  }
+  ion-content {
+    background-color: $gray !important;
+    ion-searchbar {
+      background: transparent !important;
+      width: 90%;
+      margin: 0 auto;
+      border: none !important;
     }
+    event-card {
+      display: flex;
+      padding: 10px 20px;
+    }
+    event-card.selectedEvent {
+      background-color: rgba(255, 208, 4, 0.3);
+    }
+    .currentDayEvents,
+    .currentWeekEvents,
+    .otherEvents {
+      background-color: #fff;
+      margin: 40px 0;
+      position: relative;
+      padding-top: 40px;
+    }
+    .currentDayEvents:before,
+    .currentWeekEvents:before,
+    .otherEvents:before {
+      color: #000;
+      background-color: $yellow;
+      padding: 5px 20px;
+      font-weight: 900;
+      font-style: italic;
+      font-size: 20px;
+      position: absolute;
+      top: -20px;
+    }
+    .currentDayEvents:before {
+      content: 'TODAY';
+    }
+    .currentWeekEvents:before {
+      content: 'THIS WEEK';
+    }
+    .otherEvents:before {
+      content: 'OTHER';
+    }
+    .noSearchResults{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      h1{
+        font-size: 6em;
+      }
+      h2{
+
+      }
+    }
+  }
 }
